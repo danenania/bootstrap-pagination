@@ -59,7 +59,7 @@ var pagination = new BootstrapPagination("#pagination", {
 
     var $w = $(window);
     var wh = $w.height()
-    var left = Math.random() * $w.width();
+    var left = Math.random() * ($w.width()-50);
     var top = Math.random() * (wh/3);
     $("<span class='float'>" + (selectedIndex + 1) + "</span>")
 
