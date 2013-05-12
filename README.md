@@ -1,8 +1,5 @@
 Simple client-side paging built on [bootstrap's pagination component](http://twitter.github.io/bootstrap/components.html#pagination).
 
-Use
----
-
     <div id="pagination"></div>
 
     <script>
