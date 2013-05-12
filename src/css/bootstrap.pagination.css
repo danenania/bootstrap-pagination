@@ -1,0 +1,7 @@
+.bootstrap-pager {
+  display: none; }
+  .bootstrap-pager .pagination {
+    display: inline; }
+    .bootstrap-pager .pagination.numeric {
+      float: right;
+      margin: 0; }

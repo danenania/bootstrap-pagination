@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>Bootstrap Pagination Example</title>
+
+<link rel="stylesheet" href="vendor/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="src/css/bootstrap.pagination.css" type="text/css" />
+
+<script src="vendor/js/jquery-1.9.1.min.js"></script>
+<script src="src/js/bootstrap.pagination.js"></script>
+
+<style>
+  body {
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  .pagination {
+    display: inline-block;
+  }
+  .pagination ul {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .float {
+     font-weight : bold;
+     font-size : 70px;
+     position : absolute;
+     display : none;
+     pointer-events: none;
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Bootstrap Pagination</h2>
+
+<div id="pagination"></div>
+
+
+<script>
+
+var pagination = new BootstrapPagination("#pagination", {
+  numPages: 42,
+  selectedIndex: 0,
+  numBlocks: 7,
+  prevText: "«",
+  nextText: "»",
+  onSelect: function(selectedIndex){
+
+    var $w = $(window);
+    var wh = $w.height()
+    var left = Math.random() * $w.width();
+    var top = Math.random() * (wh/3);
+    $("<span class='float'>" + (selectedIndex + 1) + "</span>")
+
+    .css({
+      "top" : top,
+      "left": left,
+      "color" : '#'+Math.floor(Math.random()*16777215).toString(16)
+    })
+
+    .appendTo("body").fadeIn().animate({
+      top: wh + 50
+    },{
+      duration: (wh / 250) * 1000,
+      complete: function(){
+        $(this).remove();
+      }
+    });
+  }
+});
+
+
+</script>
+
+</body>
+
+</html>
